@@ -12,7 +12,7 @@
 #error not support packed struct
 #endif
 
-namespace rm_serial_driver {
+namespace serial_driver {
 
     struct __attribute__((packed)) SendPacket {
         //uint8_t header = 0xFF;
@@ -59,6 +59,6 @@ namespace rm_serial_driver {
     //     return packet;
     // }
 
-}// namespace rm_serial_driver
+}// namespace serial_driver
 
 #endif// RM_SERIAL_DRIVER__PACKET_HPP_

@@ -8,7 +8,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/subscription.hpp>
 
-namespace rm_serial_driver {
+namespace serial_driver {
 
     struct SerialPortConfig {
         std::string device_name = "/dev/ttyNav";
@@ -34,9 +34,9 @@ namespace rm_serial_driver {
 
         void sendPacket(const geometry_msgs::msg::Twist::SharedPtr msg);// 通过串口发送数据包给下位机
 
-        void receivePacket(const boost::system::error_code &ec, std::size_t bytes_transferred);// 通过串口接收数据包
+        //void receivePacket(const boost::system::error_code &ec, std::size_t bytes_transferred);// 通过串口接收数据包
 
-        void publishData(const ReceivePacket &packet);
+        //void publishData(const ReceivePacket &packet);
 
         void openPort();
 
@@ -44,6 +44,6 @@ namespace rm_serial_driver {
 
         void reopenPort();
     };
-}// namespace rm_serial_driver
+}// namespace serial_driver
 
 #endif// RM_SERIAL_DRIVER__RM_SERIAL_DRIVER_HPP_
