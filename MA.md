@@ -8,7 +8,13 @@ sudo apt purge brltty
 ```bash
 ls /dev/tty*
 ```
-
+## build
+```bash
+colcon build --symlink-install
+``` 
+```bash
+rm -rf build/ install/ log/
+```
 ## run
 
 ```bash

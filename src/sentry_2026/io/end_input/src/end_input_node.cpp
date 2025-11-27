@@ -24,7 +24,10 @@ void EndInput::send_data(const geometry_msgs::msg::Twist::SharedPtr msg) {
 
   try {
     auto sendData = std::make_unique<end_input::msg::SendData>();
-
+    this->nav_to_aim.line_vel_x=static_cast<float>(msg->linear.x);
+    this->nav_to_aim.line_vel_y=static_cast<float>(msg->linear.y);
+    this->nav_to_aim.angle_vel_z=static_cast<float>(msg->angular.z);
+    this->sum_Nav2Aim.push_back(this->nav_to_aim);
     // 假设你的 SendData.msg 中有这些字段
     sendData->line_vel_x = static_cast<float>(msg->linear.x);
     sendData->line_vel_y = static_cast<float>(msg->linear.y);
